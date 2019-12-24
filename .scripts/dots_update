@@ -1,0 +1,15 @@
+# Git status
+git --git-dir=$HOME/dotfiles/ --work-tree=$HOME status > /tmp/git-status.tmp
+# Wait
+sleep 1
+# Dialog Box (Git Status)
+dialog --title "Changes to make" --textbox /tmp/git-status.tmp 20 80
+# Dialog Box (Commit message)
+dialog --title "Commit Message" --inputbox "Insert commit message:" 5 40 2> /tmp/commit-message.tmp
+# Wait
+sleep 1
+# Variables
+reason="$(cat /tmp/commit-message.tmp)"
+# Git commands
+git --git-dir=$HOME/dotfiles/ --work-tree=$HOME commit -a -m "$reason"
+git --git-dir=$HOME/dotfiles/ --work-tree=$HOME push

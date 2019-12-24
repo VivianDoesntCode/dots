@@ -1,0 +1,50 @@
+% egrep -v '^#' .ncmpcpp/config
+mpd_music_dir = "~/Music/"
+visualizer_in_stereo = "yes"
+visualizer_fifo_path = "/tmp/mpd.fifovisualizer_output_name = "my_fifo"
+visualizer_output_name = "Visualizer Feed"
+visualizer_sync_interval = "30"
+visualizer_type = "spectrum"
+visualizer_look = "●┃"
+message_delay_time = "3"
+playlist_shorten_total_times = "yes"
+playlist_display_mode = "classic"
+browser_display_mode = "columns"
+search_engine_display_mode = "columns"
+playlist_editor_display_mode = "classic"
+autocenter_mode = "yes"
+centered_cursor = "yes"
+user_interface = "classic"
+follow_now_playing_lyrics = "yes"
+locked_screen_width_part = "60"
+display_bitrate = "no"
+external_editor = "vim"
+use_console_editor = "yes"
+header_window_color = "cyan"
+volume_color = "red"
+state_line_color = "white"
+state_flags_color = "red"
+
+mouse_support = "no"
+
+header_visibility = "no"
+
+progressbar_color = "1"
+progressbar_look = "━━━"
+progressbar_elapsed_color = "11"
+
+titles_visibility = "no"
+
+statusbar_color = "cyan"
+visualizer_color = blue, cyan, green, yellow, magenta, red
+#visualizer_look = ●卐
+mpd_host = "127.0.0.1"
+mpd_port = "6601"
+lines_scrolled = "1"
+
+now_playing_prefix = "$b$5"
+now_playing_suffix = "$/b$9"
+song_list_format = "{{%a - %t}|{%f}}"
+song_status_format = "{%a - %t}"
+song_columns_list_format = (20)[]{a} (50)[white]{t|f:Title} (50)[green]{b}  (7f)[magenta]{l}enable_window_title = "yes"
+song_window_title_format = "{%a - }{%t}|{%f}"

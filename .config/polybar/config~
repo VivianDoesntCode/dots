@@ -1,0 +1,64 @@
+[colors]
+background = ${xrdb:background} 
+foreground = ${xrdb:foreground}
+primary =  ${xrdb:color3}
+secondary = ${xrdb:color3}
+alert = ${xrdb:color1}
+
+[bar/example]
+monitor = "DP-0"
+width = 75%
+height = 35
+
+offset-x = 12.5%
+offset-y = 7.5
+
+line-size = 1
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+bottom = true
+
+font-0 = Fira Mono:style=Bold:pixelsize=8:antialias=true
+
+modules-left = bspwm
+modules-center = xwindow
+modules-right = date
+
+padding-right = 2
+
+scroll-up = bspc desktop -f prev
+scroll-down = bspc desktop -f next
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:100:%
+
+[module/bspwm]
+type = internal/bspwm
+
+label-focused = %index%
+label-focused-underline = ${colors.foreground}
+label-focused-padding = 2
+
+label-occupied = %index%
+label-occupied-padding = 2
+
+label-urgent = %index%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+label-empty = 
+
+label-visible = %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+[module/date]
+type = internal/date
+interval = 1
+label = %date% - %time%
+time = %H:%M:%S
+date = %e %B %Y
